@@ -1,0 +1,531 @@
+@import url(NavBar_Com_BarraPesquisa.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #D9D9D9;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+    font-family: 'Jacques Francois', serif;
+    line-height: 1.6;
+}
+
+/* Main form styling */
+.book-form {
+    background-color: #5A4A41;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 950px;
+    margin: 30px auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-main-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.image-upload-section {
+    flex: 0 0 270px;
+    background-color: #4B3A32;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.image-placeholder {
+    width: 100%;
+    padding-top: 100%;
+    background-color: #6D5B4D;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.image-placeholder img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.edit-photo-btn {
+    background-color: #A66E4E;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 80%;
+    max-width: 150px;
+}
+
+.edit-photo-btn:hover {
+    background-color: #8a5a40;
+    transform: translateY(-2px);
+}
+
+/* Book Details Section */
+.book-details-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 400px;
+}
+
+.book-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.book-title-input {
+    flex: 3;
+    min-width: 200px;
+}
+
+.book-title-input input {
+    font-family: 'Jacques Francois', serif;
+    font-size: 32px;
+    font-weight: normal;
+    color: #F8F8F8;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    outline: none;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.book-title-input input::placeholder {
+    color: #F8F8F8;
+    opacity: 0.8;
+}
+
+.book-category-select {
+    flex: 1;
+    min-width: 120px;
+    max-width: 180px;
+}
+
+.book-category-select select {
+    font-family: 'Jacques Francois', serif;
+    padding: 8px 15px;
+    border: 1px solid #A66E4E;
+    border-radius: 20px;
+    background-color: #6D5B4D;
+    color: #F8F8F8;
+    font-size: 15px;
+    cursor: pointer;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 10px auto;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+}
+
+.book-category-select select:focus {
+    outline: none;
+    border-color: #C28B6A;
+    /* Lighter border on focus */
+}
+
+.book-category-select select option {
+    background-color: #6D5B4D;
+    color: #F8F8F8;
+}
+
+.book-description-textarea textarea {
+    min-height: 180px;
+    /* Increased height */
+    min-width: 80%;
+    resize: vertical;
+    font-family: Arial, sans-serif;
+    /* More standard font for body text */
+    font-size: 15px;
+    /* Slightly smaller font for description */
+    line-height: 1.6;
+    color: #F8F8F8;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    /* Include padding in element's total width and height */
+}
+
+.book-description-textarea textarea::placeholder {
+    color: #F8F8F8;
+    opacity: 0.7;
+}
+
+/* Author and Publisher Inputs (Desktop) */
+.author-publisher-desktop {
+    display: flex;
+    gap: 20px;
+    margin-top: auto;
+    /* Push to bottom */
+    width: 100%;
+}
+
+.author-publisher-desktop .form-group {
+    flex: 1;
+    margin-bottom: 0;
+    /* Remove extra margin */
+}
+
+.author-publisher-desktop input[type="text"] {
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    padding: 5px 0;
+    /* Adjusted padding */
+    font-size: 16px;
+    color: #F8F8F8;
+    border-bottom: 1px solid #A66E4E;
+    border-radius: 0;
+    outline: none;
+}
+
+.author-publisher-desktop input[type="text"]::placeholder {
+    color: #F8F8F8;
+    opacity: 0.7;
+}
+
+/* Author and Publisher Inputs (Mobile) */
+.author-publisher-mobile {
+    display: none;
+    /* Hidden by default */
+    width: 100%;
+    margin-top: 20px;
+    gap: 15px;
+    /* Gap between inputs */
+}
+
+.author-publisher-mobile .form-group {
+    margin-bottom: 0;
+}
+
+.author-publisher-mobile input[type="text"] {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    /* Centered on mobile */
+    padding: 5px 0;
+    font-size: 16px;
+    color: #F8F8F8;
+    border-bottom: 1px solid #A66E4E;
+    border-radius: 0;
+    outline: none;
+}
+
+.author-publisher-mobile input[type="text"]::placeholder {
+    color: #F8F8F8;
+    opacity: 0.7;
+}
+
+/* Price and Stock Inputs */
+.price-stock-inputs {
+    display: flex;
+    justify-content: flex-end;
+    /* Align to the right */
+    align-items: center;
+    gap: 15px;
+    /* Gap between inputs */
+    margin-top: auto;
+    /* Pushes them to the bottom before Year */
+}
+
+.price-stock-inputs .form-group {
+    flex: none;
+    /* Do not grow */
+    width: 120px;
+    /* Fixed width for input */
+    margin-bottom: 0;
+    /* Removed position: relative; as inputs are always visible */
+}
+
+.price-stock-inputs input[type="number"] {
+    /* Removed position: absolute; top:0; left:0; width:100%; height:100%; */
+    padding: 8px;
+    font-size: 14px;
+    text-align: center;
+    background-color: #6D5B4D;
+    /* Background for the input field itself */
+    border: 1px solid #A66E4E;
+    color: #ffffff;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+    /* Inner shadow for input */
+    transition: all 0.3s ease;
+    display: block;
+    /* Ensure they are always block level and visible */
+    width: 100%;
+    /* Make input fill its container */
+}
+
+.price-stock-inputs input[type="number"]::placeholder {
+    color: #F8F8F8;
+    opacity: 0.7;
+}
+
+
+.price-stock-inputs input[type="number"]:focus {
+    outline: none;
+    border-color: #C28B6A;
+}
+
+/* Publication Year Input */
+.publication-year-input {
+    margin-top: auto;
+    /* Pushes it to the bottom */
+    width: 150px;
+    /* Fixed width for the input field */
+    align-self: flex-end;
+    /* Align to the right */
+    margin-bottom: 0;
+}
+
+.publication-year-input input[type="number"] {
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #A66E4E;
+    padding: 5px 0;
+    color: #F8F8F8;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    border-radius: 0;
+}
+
+.publication-year-input input[type="number"]::placeholder {
+    color: #F8F8F8;
+    opacity: 0.7;
+}
+
+/* Attention Note */
+.attention-note {
+    color: #ffcc00;
+    text-align: center;
+    margin: 20px 0 0;
+    font-size: 14px;
+    /* Slightly smaller font */
+}
+
+/* Save Button */
+.save-btn {
+    background-color: #A66E4E;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    justify-content: center;
+    margin: 30px auto 0;
+    /* More space above the button */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Stronger shadow for save button */
+}
+
+.save-btn:hover {
+    background-color: #8a5a40;
+    transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 850px) {
+    .form-main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-upload-section {
+        width: 90%;
+        max-width: 300px;
+        min-height: auto;
+    }
+
+    .book-details-section {
+        width: 90%;
+        min-width: unset;
+        /* Remove min-width on smaller screens */
+    }
+
+    .book-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        /* Increase gap between title and category */
+    }
+
+    .book-title-input {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .book-category-select {
+        width: 100%;
+        max-width: unset;
+    }
+
+    .author-publisher-desktop {
+        display: none;
+    }
+
+    .author-publisher-mobile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .price-stock-inputs {
+        justify-content: flex-start;
+        /* Align left on mobile */
+        width: 100%;
+        flex-wrap: wrap;
+        /* Allow wrapping */
+    }
+
+    .price-stock-inputs .form-group {
+        width: 48%;
+        /* Two columns for inputs */
+    }
+
+    .publication-year-input {
+        width: 100%;
+        align-self: flex-start;
+        /* Align left on mobile */
+        margin-top: 15px;
+        /* Add some space */
+    }
+
+    .save-btn {
+        width: 80%;
+        /* Make save button wider on mobile */
+        max-width: 300px;
+    }
+
+    footer {
+        background-color: #260B01;
+        padding: 40px 8%;
+        color: #fff;
+        width: 100%;
+        position: relative;
+        bottom: 0;
+    }
+
+    #footer_items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        /* Permite que os itens quebrem para nova linha em telas pequenas */
+        gap: 20px;
+        /* Espaço entre os itens */
+    }
+
+    .social-media-buttons {
+        display: flex;
+        gap: 15px;
+        /* Substitui as margens individuais */
+    }
+
+    .social-media-buttons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: #fff;
+        transition: color 0.3s ease;
+    }
+
+    .social-media-buttons a:hover {
+        color: #f0a500;
+        /* Cor de hover para melhor interatividade */
+    }
+
+    .footer_infos {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    #copyright {
+        white-space: nowrap;
+        /* Evita quebra de linha no copyright */
+    }
+}
+
+@media (max-width: 500px) {
+    .main-header form {
+        width: 80%;
+    }
+
+    .book-form {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .image-upload-section {
+        padding: 15px;
+    }
+
+    .image-placeholder {
+        margin-bottom: 15px;
+    }
+
+    .edit-photo-btn {
+        width: 100%;
+        max-width: unset;
+    }
+
+    .book-details-section {
+        gap: 15px;
+    }
+
+    .book-title-input input {
+        font-size: 26px;
+        /* Smaller title on very small screens */
+    }
+
+    .price-stock-inputs .form-group {
+        width: 100%;
+        /* Full width for inputs on very small screens */
+    }
+}
