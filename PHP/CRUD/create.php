@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             showConfirmButton: false,
                             timerProgressBar: true
                         }).then(() => {
-                            window.location.href = '../login&cadastro/admin.php';
+                            window.location.href = '../Front&BackUnidos/admin.php';
                         });
                     });
                 </script>";
@@ -120,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <div class="logo">
                 <a href="../../default.php">Leyo<span>+</span></a>
             </div>
-            <form action="/Biblioteca/php/functions/pgPesquisa.php" method="get">
+            <form action="/Biblioteca/php/Front&BackUnidos/pgPesquisa.php" method="get">
                 <input type="text" name="busca" placeholder="Pesquise o livro" autocomplete="off">
                 <button type="submit"><i class="fas fa-search"></i></button>
             </form>
@@ -133,8 +133,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             <nav class="main-nav">
                 <ul>
-                    <li><a href="../login&cadastro/admin.php">Voltar</a></li>
-                    <li><a href="../login&cadastro/logout.php">Logout</a></li>
+                    <li><a href="../Front&BackUnidos/admin.php">Voltar</a></li>
+                    <li><a href="../functions/logout.php">Logout</a></li>
                 </ul>
             </nav>
         </div>

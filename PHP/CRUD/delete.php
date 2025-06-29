@@ -45,7 +45,7 @@ if (isset($_GET['id'])) {
 
 
         if ($stmt->execute()) {
-            header("location: ../login&cadastro/admin.php");
+            header("location: ../Front&BackUnidos/admin.php");
         } else {
             echo "
             <script>
@@ -55,7 +55,7 @@ if (isset($_GET['id'])) {
                     text: 'Erro ao excluir o livro.',
                     showConfirmButton: true
                 }).then(() => {
-                    window.location.href = '../login&cadastro/admin.php';
+                    window.location.href = '../Front&BackUnidos/admin.php';
                 });
             </script>";
         }
@@ -68,7 +68,7 @@ if (isset($_GET['id'])) {
                 text: 'Não foi possível localizar o livro para exclusão.',
                 showConfirmButton: true
             }).then(() => {
-                window.location.href = '../login&cadastro/admin.php';
+                window.location.href = '../Front&BackUnidos/admin.php';
             });
         </script>";
     }
@@ -81,7 +81,7 @@ if (isset($_GET['id'])) {
             text: 'ID não especificado.',
             showConfirmButton: true
         }).then(() => {
-            window.location.href = '../login&cadastro/admin.php';
+            window.location.href = '../Front&BackUnidos/admin.php';
         });
     </script>";
 }

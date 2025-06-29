@@ -13,7 +13,7 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
                 title: 'Erro',
                 text: 'ID não especificado.'
             }).then(() => {
-                window.location.href = '../login&cadastro/admin.php';
+                window.location.href = '../Front&BackUnidos/admin.php';
             });
         };
     </script>";
@@ -36,7 +36,7 @@ if (!$livro) {
                 title: 'Erro',
                 text: 'Livro não encontrado.'
             }).then(() => {
-                window.location.href = '../login&cadastro/admin.php';
+                window.location.href = '../Front&BackUnidos/admin.php';
             });
         };
     </script>";
@@ -132,7 +132,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 showConfirmButton: false,
                 timerProgressBar: true
             }).then(() => {
-                window.location.href = '../login&cadastro/admin.php';
+                window.location.href = '../Front&BackUnidos/admin.php';
             });
         };
     </script>";
@@ -156,14 +156,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <header class="main-header">
         <div class="header-content">
             <div class="logo"><a href="../../default.php">Leyo<span>+</span></a></div>
-            <form action="/Biblioteca/php/functions/pgPesquisa.php" method="get">
+            <form action="/PROJETOLIVRARIALEYO+/php/Front&BackUnidos/pgPesquisa.php" method="get">
                 <input type="text" name="busca" placeholder="Pesquise o livro" autocomplete="off">
                 <button type="submit"><i class="fas fa-search"></i></button>
             </form>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="../login&cadastro/admin.php">Voltar</a></li>
-                    <li><a href="../login&cadastro/logout.php">Logout</a></li>
+                    <li><a href="../Front&BackUnidos/admin.php">Voltar</a></li>
+                    <li><a href="../Front&BackUnidos/logout.php">Logout</a></li>
                 </ul>
             </nav>
         </div>
